@@ -26,7 +26,7 @@ install_cmdstan()
 
 ## How to Run the Project
 
-### Using Antigravity / VS Code Terminal
+###  VS Code Terminal
 
 1. Open this repository (`d:\research\research\sir_bayesian_tutorial`) in your IDE or terminal.
 2. Ensure you have the proper R environment active.
