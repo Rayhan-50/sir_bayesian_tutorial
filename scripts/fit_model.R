@@ -1,4 +1,4 @@
-# 01_fit_sir.R  ---------------------------------------------------------------
+# fit_model.R  ---------------------------------------------------------------
 # Exact replication of the mc-stan.org boarding school case study
 # Reference: https://mc-stan.org/learn-stan/case-studies/boarding_school_case_study.html
 # -----------------------------------------------------------------------------
@@ -63,8 +63,8 @@ cat("\n----- Parameter Summary -----\n")
 print(fit_sir_negbin, pars = pars)
 
 # --- 6. Save fit object -----------------------------------------------------
-saveRDS(fit_sir_negbin, "scripts/fit_sir.rds")
-cat("Fit saved to scripts/fit_sir.rds\n")
+saveRDS(fit_sir_negbin, "outputs/fitted_model.rds")
+cat("Fit saved to outputs/fitted_model.rds\n")
 
 # --- 7. Posterior predictive check plot ------------------------------------
 # Matches tutorial code exactly:
@@ -91,5 +91,5 @@ p <- ggplot(smr_pred, mapping = aes(x = t)) +
   geom_point(mapping = aes(y = cases)) +
   labs(x = "Day", y = "Number of students in bed")
 
-ggsave("scripts/posterior_predictive.png", plot = p, width = 7, height = 4)
-cat("Plot saved to scripts/posterior_predictive.png\n")
+ggsave("outputs/figures/posterior_predictive_check.png", plot = p, width = 7, height = 4)
+cat("Plot saved to outputs/figures/posterior_predictive_check.png\n")
